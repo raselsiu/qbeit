@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\TopHeaderController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +23,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
+
+
+
+// -------------------------BACKEND--------------------------------------
+// ======================================================================
+Route::prefix('dashboard')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/top-header', [TopHeaderController::class, 'index'])->name('topHeader');
+});
+
+// ======================================================================
+// ------------------------BACKEND END-----------------------------------
