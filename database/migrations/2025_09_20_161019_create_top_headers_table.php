@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('top_headers', function (Blueprint $table) {
             $table->id();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
+            $table->string('logo')->nullable();
+            $table->string('fb')->nullable();
+            $table->string('ln')->nullable();
+            $table->string('wh')->nullable();
             $table->timestamps();
         });
     }

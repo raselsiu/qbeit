@@ -31,9 +31,17 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // -------------------------BACKEND--------------------------------------
 // ======================================================================
+
 Route::prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    // 
+    // 
+    // Header and Footer Info
     Route::get('/top-header', [TopHeaderController::class, 'index'])->name('topHeader');
+    Route::post('/top-header/store', [TopHeaderController::class, 'store'])->name('topHeaderStore');
+    Route::get('/top-header-edit/{id}', [TopHeaderController::class, 'edit'])->name('topHeaderEdit');
+    Route::post('/top-header-update/{id}', [TopHeaderController::class, 'update'])->name('topHeaderUpdate');
+    Route::get('/top-header-delete/{id}', [TopHeaderController::class, 'destroy'])->name('topHeaderDestroy');
 });
 
 // ======================================================================

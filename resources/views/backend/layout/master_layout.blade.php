@@ -14,6 +14,10 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('backend/dist/css/adminlte.min.css') }}">
 
+
+    <script src="{{ asset('backend/js/sweetalert2.js') }}"></script>
+    <link href="{{ asset('backend/js/sweetalert2.min.css') }}" rel="stylesheet">
+
     @stack('css')
 
 </head>
