@@ -68,6 +68,14 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('whoWeAre') }}" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Who We Are
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
