@@ -66,10 +66,6 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/banner-delete/{id}', [BannerController::class, 'destroy'])->name('bannerDestroy');
 
 
-
-
-
-
     // Who We Are 
     Route::get('/who-we-are', [WhoWeAreController::class, 'index'])->name('whoWeAre');
     Route::get('/who-we-are/create', [WhoWeAreController::class, 'create'])->name('whoWeAreCreate');
@@ -77,14 +73,6 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/who-we-are-edit/{id}', [WhoWeAreController::class, 'edit'])->name('whoWeAreEdit');
     Route::post('/who-we-are-update/{id}', [WhoWeAreController::class, 'update'])->name('whoWeAreUpdate');
     Route::get('/who-we-are-delete/{id}', [WhoWeAreController::class, 'destroy'])->name('whoWeAreDestroy');
-
-
-
-
-
-
-
-
 
 
 

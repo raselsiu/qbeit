@@ -76,6 +76,15 @@
                                 </p>
                             </a>
                         </li>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('offer') }}" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    What We Offer
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
