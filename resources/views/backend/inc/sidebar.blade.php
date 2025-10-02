@@ -85,6 +85,42 @@
                                 </p>
                             </a>
                         </li>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('team') }}" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Team
+                                </p>
+                            </a>
+                        </li>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('testimonial') }}" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Testimonial
+                                </p>
+                            </a>
+                        </li>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('whyChooseUs') }}" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Why Choose Us
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('posts') }}" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Posts
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

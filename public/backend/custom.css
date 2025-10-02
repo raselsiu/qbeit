@@ -1,0 +1,14 @@
+.cke_notifications_area {
+    display: none !important;
+}
+
+.card-primary:not(.card-outline)>.card-header {
+    background-color: #474b50 !important;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #474b50 !important;
+    border-color: #474b50 !important;
+    box-shadow: none;
+}

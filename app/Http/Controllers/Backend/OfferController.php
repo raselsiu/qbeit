@@ -12,16 +12,14 @@ class OfferController extends Controller
     public function index()
     {
         $whoweare['whoweare'] = Offer::all();
-        return view('backend.pages.who_we_are.index', $whoweare);
+        return view('backend.pages.what_we_offer.index', $whoweare);
     }
 
 
     public function create()
     {
-        return view('backend.pages.who_we_are.create');
+        return view('backend.pages.what_we_offer.create');
     }
-
-
 
 
     public function store(Request $request)
@@ -35,40 +33,20 @@ class OfferController extends Controller
             $who = new Offer();
             $who->title = $request->title;
             $who->description = $request->description;
-            $who->feature_one_title = $request->feature_one_title;
-            $who->feature_one_desc = $request->feature_one_desc;
-            $who->feature_two_title = $request->feature_two_title;
-            $who->feature_two_desc = $request->feature_two_desc;
 
-            $folderPath = public_path('upload/who_we_are');
+            $folderPath = public_path('upload/what_we_offer');
 
 
             if (!File::exists($folderPath)) {
                 File::makeDirectory($folderPath, 0755, true, true);
             }
 
-            if ($request->file('feature_image_right')) {
-                $file = $request->file('feature_image_right');
-                @unlink(public_path('upload/who_we_are/' . $who->feature_image_right));
+            if ($request->file('image')) {
+                $file = $request->file('image');
+                @unlink(public_path('upload/what_we_offer/' . $who->image));
                 $fileName = date('YmdHi') . $file->getClientOriginalName();
-                $file->move(public_path('upload/who_we_are'), $fileName);
-                $who->feature_image_right = $fileName;
-            }
-
-            if ($request->file('feature_image_one')) {
-                $file = $request->file('feature_image_one');
-                @unlink(public_path('upload/who_we_are/' . $who->feature_image_one));
-                $fileName = date('YmdHi') . $file->getClientOriginalName();
-                $file->move(public_path('upload/who_we_are'), $fileName);
-                $who->feature_image_one = $fileName;
-            }
-
-            if ($request->file('feature_image_two')) {
-                $file = $request->file('feature_image_two');
-                @unlink(public_path('upload/who_we_are/' . $who->feature_image_two));
-                $fileName = date('YmdHi') . $file->getClientOriginalName();
-                $file->move(public_path('upload/who_we_are'), $fileName);
-                $who->feature_image_two = $fileName;
+                $file->move(public_path('upload/what_we_offer'), $fileName);
+                $who->image = $fileName;
             }
 
 
@@ -90,8 +68,8 @@ class OfferController extends Controller
 
     public function edit(string $id)
     {
-        $whowe['who'] = Offer::find($id);
-        return view('backend.pages.who_we_are.edit', $whowe);
+        $whowe['what'] = Offer::find($id);
+        return view('backend.pages.what_we_offer.edit', $whowe);
     }
 
 
@@ -100,53 +78,31 @@ class OfferController extends Controller
         $who = Offer::find($id);
         $who->title = $request->title;
         $who->description = $request->description;
-        $who->feature_one_title = $request->feature_one_title;
-        $who->feature_one_desc = $request->feature_one_desc;
-        $who->feature_two_title = $request->feature_two_title;
-        $who->feature_two_desc = $request->feature_two_desc;
 
-        $folderPath = public_path('upload/who_we_are');
+        $folderPath = public_path('upload/what_we_offer');
 
 
         if (!File::exists($folderPath)) {
             File::makeDirectory($folderPath, 0755, true, true);
         }
 
-        if ($request->file('feature_image_right')) {
-            $file = $request->file('feature_image_right');
-            @unlink(public_path('upload/who_we_are/' . $who->feature_image_right));
+        if ($request->file('image')) {
+            $file = $request->file('image');
+            @unlink(public_path('upload/what_we_offer/' . $who->image));
             $fileName = date('YmdHi') . $file->getClientOriginalName();
-            $file->move(public_path('upload/who_we_are'), $fileName);
-            $who->feature_image_right = $fileName;
-        }
-
-        if ($request->file('feature_image_one')) {
-            $file = $request->file('feature_image_one');
-            @unlink(public_path('upload/who_we_are/' . $who->feature_image_one));
-            $fileName = date('YmdHi') . $file->getClientOriginalName();
-            $file->move(public_path('upload/who_we_are'), $fileName);
-            $who->feature_image_one = $fileName;
-        }
-
-        if ($request->file('feature_image_two')) {
-            $file = $request->file('feature_image_two');
-            @unlink(public_path('upload/who_we_are/' . $who->feature_image_two));
-            $fileName = date('YmdHi') . $file->getClientOriginalName();
-            $file->move(public_path('upload/who_we_are'), $fileName);
-            $who->feature_image_two = $fileName;
+            $file->move(public_path('upload/what_we_offer'), $fileName);
+            $who->image = $fileName;
         }
 
         $who->save();
-        return redirect()->back()->with('msg', 'Updated Successfully');
+        return redirect()->route('offer')->with('msg', 'Updated Successfully');
     }
 
 
     public function destroy(string $id)
     {
         $who = Offer::find($id);
-        @unlink(public_path('upload/who_we_are/' . $who->feature_image_right));
-        @unlink(public_path('upload/who_we_are/' . $who->feature_image_one));
-        @unlink(public_path('upload/who_we_are/' . $who->feature_image_two));
+        @unlink(public_path('upload/what_we_offer/' . $who->feature_image_right));
         $who->delete();
         return redirect()->back()->with('success', 'Deleted Successfully');
     }

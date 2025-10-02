@@ -31,26 +31,31 @@
 
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Update Testimonial </h3>
+                        <h3 class="card-title">Create - Posts</h3>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('testimonialUpdate', $data->id) }}" method="POST"
-                            enctype="multipart/form-data">
+                        <form action="{{ route('postsUpdate', $post->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="subtitle">Write User Experiance</label>
-                                        <textarea name="desc" class="form-control" id="desc" cols="10" rows="5"
-                                            placeholder="Write user experiance" required>{{ $data->desc }}</textarea>
+                                        <label for="title">Post Title</label>
+                                        <input type="text" name="title" class="form-control" id="title"
+                                            placeholder="Enter Your Title" value="{{ $post->title }}" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="description"> Post Description</label>
+                                        <textarea name="desc" id="desc" cols="10" rows="20" class="form-control"
+                                            placeholder="Enter Your Description" required>{{ $post->desc }}</textarea>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="Icon Class">Upload User Image(Optional)</label>
-                                        <input type="file" name="image" class="form-control" id="image"
-                                            placeholder="Upload Icon">
+                                        <label for="Image">Upload Post Image</label>
+                                        <input type="file" name="image" class="form-control" id="image">
                                     </div>
                                 </div>
                             </div>
@@ -58,7 +63,7 @@
 
 
                             <div class="card-footer text-right">
-                                <button type="submit" class="btn btn-primary">Update Now</button>
+                                <button type="submit" class="btn btn-primary">Create Posts Section</button>
                             </div>
                         </form>
                     </div>
@@ -96,5 +101,9 @@
                 });
             })
         })
+    </script>
+
+    <script>
+        CKEDITOR.replace('desc');
     </script>
 @endpush

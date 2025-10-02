@@ -29,61 +29,12 @@
                 @endif
 
 
-
-
-                @if (@$banners->count() > 0)
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Footer & Header Info</h3>
-                        </div>
-                        <div class="card-body">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 10px">#</th>
-                                        <th>Image</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Address</th>
-                                        <th style="width: 40px">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($banners as $banner)
-                                        <tr>
-                                            <td>1.</td>
-                                            <td>
-                                                <img src="/upload/banner/{{ $banner->image }}" alt="image"
-                                                    width="50">
-                                            </td>
-                                            <td><span class="badge bg-success">{{ Str::limit($banner->title, 10) }}</span>
-                                            </td>
-                                            <td><span
-                                                    class="badge bg-success">{{ Str::limit($banner->subtitle, 10) }}</span>
-                                            </td>
-                                            <td>
-                                                <a href="{{ route('bannerEdit', $banner->id) }}" title="Edit"
-                                                    class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
-                                                <a href="{{ route('bannerDestroy', $banner->id) }}" title="Delete"
-                                                    id="deleteEvent" class="btn btn-sm btn-danger"><i
-                                                        class="fa fa-trash"></i></a>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                @else
-                @endif
-
-
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Create Banner </h3>
+                        <h3 class="card-title">Create - What We Offer - Section</h3>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('bannerStore') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('whatWeOfferStore') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
@@ -93,19 +44,19 @@
                                             placeholder="Enter Your Title" required>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="subtitle">Subtitle</label>
-                                        <input type="text" class="form-control" name="subtitle" id="subtitle"
-                                            placeholder="Enter Your Subtitle" required>
+                                        <label for="description">Description</label>
+                                        <textarea name="description" id="description" cols="10" rows="5" class="form-control"
+                                            placeholder="Enter Your Description" required></textarea>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="Icon Class">Banner Logo</label>
+                                        <label for="Image">Image</label>
                                         <input type="file" name="image" class="form-control" id="image"
-                                            placeholder="Upload Icon" required>
+                                            placeholder="Upload Image" required>
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +64,7 @@
 
 
                             <div class="card-footer text-right">
-                                <button type="submit" class="btn btn-primary">Create Banner</button>
+                                <button type="submit" class="btn btn-primary">Create Section</button>
                             </div>
                         </form>
                     </div>

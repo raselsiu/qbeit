@@ -15,8 +15,18 @@
     <link rel="stylesheet" href="{{ asset('backend/dist/css/adminlte.min.css') }}">
 
 
+    {{-- CKEditor 5 --}}
+    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+    {{-- CKEditor 5 End --}}
+
+
     <script src="{{ asset('backend/js/sweetalert2.js') }}"></script>
     <link href="{{ asset('backend/js/sweetalert2.min.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('backend/custom.css') }}">
+
+
+
 
     @stack('css')
 
@@ -45,6 +55,9 @@
     <script src="{{ asset('backend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('backend/dist/js/adminlte.min.js') }}"></script>
+
+
+
 
     @stack('js')
 

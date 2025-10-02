@@ -27,16 +27,11 @@
                         </button>
                     </div>
                 @endif
-
-
-
-
-
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Section - Team</h3>
+                        <h3 class="card-title">Section - Posts</h3>
                         <span style="display: flex;justify-content: end" class="create_btn success"><a
-                                href="{{ route('teamCreate') }}" class="btn btn-sm btn-success">Create</a></span>
+                                href="{{ route('postsCreate') }}" class="btn btn-sm btn-success">Create</a></span>
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered">
@@ -44,35 +39,27 @@
                                 <tr>
                                     <th style="width: 10px">#</th>
                                     <th>Image</th>
-                                    <th>Name</th>
-                                    <th>Designation</th>
-                                    <th>Action</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th style="width: 150px">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @if (@$team->count() > 0)
-                                    @foreach ($team as $member)
+                                @if (@$posts->count() > 0)
+                                    @foreach ($posts as $post)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-
                                             <td>
-                                                @if (isset($member->image))
-                                                    <img src="/upload/team/{{ $member->image }}" alt="image"
-                                                        width="50">
-                                                @else
-                                                    <img src="/upload/default.png" alt="image" width="40">
-                                                @endif
-
+                                                <img src="/upload/posts/{{ $post->image }}" alt="image" width="50">
                                             </td>
-                                            <td><span>{{ $member->name, 10 }}</span>
+                                            <td><span>{{ Str::limit($post->title, 50) }}</span>
+                                            </td>
+                                            <td><span>{!! Str::limit($post->desc, 50) !!}</span>
                                             </td>
                                             <td>
-                                                <span>{{ $member->designation, 10 }}</span>
-                                            </td>
-                                            <td>
-                                                <a href="{{ route('teamEdit', $member->id) }}" title="Edit"
+                                                <a href="{{ route('postsEdit', $post->id) }}" title="Edit"
                                                     class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
-                                                <a href="{{ route('teamDestroy', $member->id) }}" title="Delete"
+                                                <a href="{{ route('postsDestroy', $post->id) }}" title="Delete"
                                                     id="deleteEvent" class="btn btn-sm btn-danger"><i
                                                         class="fa fa-trash"></i></a>
                                             </td>
@@ -84,6 +71,8 @@
                         </table>
                     </div>
                 </div>
+
+
 
             </div>
         </div>

@@ -51,7 +51,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="description">Description</label>
-                                        <textarea name="description" class="form-control" id="description" cols="5" rows="3"
+                                        <textarea name="description" class="form-control" id="editor1" cols="5" rows="3"
                                             placeholder="Write section description.."></textarea>
                                     </div>
                                 </div>
@@ -154,5 +154,9 @@
                 });
             })
         })
+    </script>
+
+    <script>
+        CKEDITOR.replace('description');
     </script>
 @endpush

@@ -3,6 +3,8 @@
 @section('content')
     <br><br>
 
+
+
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -26,50 +28,75 @@
                     </div>
                 @endif
 
+
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Update Banner </h3>
+                        <h3 class="card-title">Create Team Section</h3>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('bannerUpdate', $banner->id) }}" method="POST"
-                            enctype="multipart/form-data">
+                        <form action="{{ route('teamUpdate', $team->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="title">Title</label>
-                                        <input type="text" name="title" class="form-control" id="title"
-                                            placeholder="Enter Your Title" value="{{ $banner->title }}" required>
+                                        <label for="name">Name</label>
+                                        <input type="text" name="name" class="form-control" id="name"
+                                            value="{{ $team->name }}" placeholder="Enter Your Name" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="subtitle">Subtitle</label>
-                                        <input type="text" class="form-control" name="subtitle" id="subtitle"
-                                            value="{{ $banner->subtitle }}" placeholder="Enter Your Subtitle">
+                                        <label for="designation">Designation</label>
+                                        <input type="text" class="form-control" name="designation" id="designation"
+                                            value="{{ $team->designation }}" placeholder="Enter Your Designation" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="Icon Class">Image</label>
+                                        <label for="fb">Facebook Link</label>
+                                        <input type="text" class="form-control" name="fb" id="fb"
+                                            value="{{ $team->fb }}" placeholder="Enter Your Facebook Link">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="twitter">Twitter Link</label>
+                                        <input type="text" class="form-control" name="twitter" id="twitter"
+                                            value="{{ $team->twitter }}" placeholder="Enter Your Twitter Link">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="linkd">Linkedin</label>
+                                        <input type="text" class="form-control" name="linkd" id="linkd"
+                                            value="{{ $team->linkd }}" placeholder="Enter Your Linkedin Link">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="Icon Class">Upload Your Image</label>
                                         <input type="file" name="image" class="form-control" id="image"
-                                            placeholder="Upload Icon" required>
+                                            placeholder="Upload Icon">
                                     </div>
                                 </div>
                             </div>
-
-
-
-                            <div class="card-footer text-right">
-                                <button type="submit" class="btn btn-primary">Update Banner</button>
-                            </div>
-                        </form>
                     </div>
 
                 </div>
+
+
+
+                <div class="card-footer text-right">
+                    <button type="submit" class="btn btn-primary">Create Team</button>
+                </div>
+                </form>
             </div>
+
         </div>
+    </div>
+    </div>
     </div>
 @endsection
 

@@ -3,6 +3,8 @@
 @section('content')
     <br><br>
 
+
+
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -26,12 +28,13 @@
                     </div>
                 @endif
 
+
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Update Banner </h3>
+                        <h3 class="card-title">Update - What We Offer </h3>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('bannerUpdate', $banner->id) }}" method="POST"
+                        <form action="{{ route('whatWeOfferUpdate', $what->id) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="row">
@@ -39,22 +42,22 @@
                                     <div class="form-group">
                                         <label for="title">Title</label>
                                         <input type="text" name="title" class="form-control" id="title"
-                                            placeholder="Enter Your Title" value="{{ $banner->title }}" required>
+                                            placeholder="Enter Your Title" required value="{{ $what->title }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="subtitle">Subtitle</label>
-                                        <input type="text" class="form-control" name="subtitle" id="subtitle"
-                                            value="{{ $banner->subtitle }}" placeholder="Enter Your Subtitle">
+                                        <label for="description">Description</label>
+                                        <input type="text" class="form-control" name="description" id="description"
+                                            placeholder="Enter Your Description" required value="{{ $what->description }}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="Icon Class">Image</label>
+                                        <label for="Image">Image</label>
                                         <input type="file" name="image" class="form-control" id="image"
-                                            placeholder="Upload Icon" required>
+                                            placeholder="Upload Image">
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +65,7 @@
 
 
                             <div class="card-footer text-right">
-                                <button type="submit" class="btn btn-primary">Update Banner</button>
+                                <button type="submit" class="btn btn-primary">Update Section</button>
                             </div>
                         </form>
                     </div>

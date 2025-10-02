@@ -870,7 +870,8 @@
                             strategies to deliver cutting-edge solutions for businesses across various industries.</p>
                     </div>
                     <div class="choose-about wow fadeInUp">
-                        <div class="choose-about_icon"><img src="assets/img/icon/choose_1_1.svg" alt="image">
+                        <div class="choose-about_icon"><img
+                                src="{{ asset('frontend/assets/img/icon/choose_1_1.svg') }}" alt="image">
                         </div>
                         <div class="media-body">
                             <h3 class="box-title">Evolving Technologies</h3>
@@ -879,7 +880,8 @@
                         </div>
                     </div>
                     <div class="choose-about wow fadeInUp">
-                        <div class="choose-about_icon"><img src="assets/img/icon/choose_1_2.svg" alt="image">
+                        <div class="choose-about_icon"><img
+                                src="{{ asset('frontend/assets/img/icon/choose_1_2.svg') }}" alt="image">
                         </div>
                         <div class="media-body">
                             <h3 class="box-title">Data Security</h3>
@@ -888,7 +890,8 @@
                         </div>
                     </div>
                     <div class="choose-about wow fadeInUp">
-                        <div class="choose-about_icon"><img src="assets/img/icon/choose_1_3.svg" alt="image">
+                        <div class="choose-about_icon"><img
+                                src="{{ asset('frontend/assets/img/icon/choose_1_3.svg') }}" alt="image">
                         </div>
                         <div class="media-body">
                             <h3 class="box-title">Quality Assurance</h3>
@@ -899,13 +902,17 @@
                 </div>
                 <div class="col-lg-6 order-0 order-lg-1">
                     <div class="choose-wrapp">
-                        <div class="img1 global-img"><img src="assets/img/choose/choose_3_1.jpg" alt="Choose">
+                        <div class="img1 global-img"><img
+                                src="{{ asset('frontend/assets/img/choose/choose_3_1.jpg') }}" alt="Choose">
                         </div>
-                        <div class="img1 global-img"><img src="assets/img/choose/choose_3_2.jpg" alt="Choose">
+                        <div class="img1 global-img"><img
+                                src="{{ asset('frontend/assets/img/choose/choose_3_2.jpg') }}" alt="Choose">
                         </div>
-                        <div class="img1 global-img"><img src="assets/img/choose/choose_3_3.jpg" alt="Choose">
+                        <div class="img1 global-img"><img
+                                src="{{ asset('frontend/assets/img/choose/choose_3_3.jpg') }}" alt="Choose">
                         </div>
-                        <div class="img1 global-img"><img src="assets/img/choose/choose_3_4.jpg" alt="Choose">
+                        <div class="img1 global-img"><img
+                                src="{{ asset('frontend/assets/img/choose/choose_3_4.jpg') }}" alt="Choose">
                         </div>
                     </div>
                 </div>
@@ -919,18 +926,6 @@
         <div class="cta-wrap3 bg-title space overflow-hidden">
             <div class="container">
                 <div class="row gy-50 justify-content-center align-items-center">
-                    <div class="col-lg-2 col-6 order-lg-1">
-                        <div class="cta-img3-1">
-                            <div class="img" data-mask-src="assets/img/shape/cta-img-3-1-shape.png"><img
-                                    src="assets/img/normal/cta-img-3-1.png" alt="img"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-6 order-lg-3">
-                        <div class="cta-img3-2">
-                            <div class="img" data-mask-src="assets/img/shape/cta-img-3-2-shape.png"><img
-                                    src="assets/img/normal/cta-img-3-2.png" alt="img"></div>
-                        </div>
-                    </div>
                     <div class="col-lg-8 order-lg-2">
                         <div class="title-area text-center mb-30"><span class="sub-title text-white"><span
                                     class="squre-shape left me-2"></span>Work With Us<span
@@ -977,7 +972,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="blog-box th-ani">
-                                <div class="blog-img global-img"><img src="assets/img/blog/blog_1_1.jpg"
+                                <div class="blog-img global-img"><img src="{{ asset('frontend/assets/img/blog/blog_1_1.jpg') }}"
                                         alt="blog image"></div>
                                 <div class="blog-box_content">
                                     <div class="blog-meta"><a class="author" href="blog.html">July 05, 2025</a> <a
@@ -985,77 +980,6 @@
                                     <h3 class="box-title"><a href="blog-details.html">Top 10 IT Solutions Every
                                             Business
                                             Needs in 2025</a></h3><a href="blog-details.html"
-                                        class="th-btn style4 th-icon">Read More <i
-                                            class="fa-light fa-arrow-right-long"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="blog-box th-ani">
-                                <div class="blog-img global-img"><img src="assets/img/blog/blog_1_2.jpg"
-                                        alt="blog image"></div>
-                                <div class="blog-box_content">
-                                    <div class="blog-meta"><a class="author" href="blog.html">August 15, 2025</a> <a
-                                            href="blog.html">7 min read</a></div>
-                                    <h3 class="box-title"><a href="blog-details.html">Exploring the Benefits of
-                                            End-to-End IT Solution Services</a></h3><a href="blog-details.html"
-                                        class="th-btn style4 th-icon">Read More <i
-                                            class="fa-light fa-arrow-right-long"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="blog-box th-ani">
-                                <div class="blog-img global-img"><img src="assets/img/blog/blog_1_3.jpg"
-                                        alt="blog image"></div>
-                                <div class="blog-box_content">
-                                    <div class="blog-meta"><a class="author" href="blog.html">Sep 15, 2025</a> <a
-                                            href="blog.html">8 min read</a></div>
-                                    <h3 class="box-title"><a href="blog-details.html">The Impact of AI and Machine
-                                            Learning on IT Solutions</a></h3><a href="blog-details.html"
-                                        class="th-btn style4 th-icon">Read More <i
-                                            class="fa-light fa-arrow-right-long"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="blog-box th-ani">
-                                <div class="blog-img global-img"><img src="assets/img/blog/blog_1_1.jpg"
-                                        alt="blog image"></div>
-                                <div class="blog-box_content">
-                                    <div class="blog-meta"><a class="author" href="blog.html">July 09 2025</a> <a
-                                            href="blog.html">9 min read</a></div>
-                                    <h3 class="box-title"><a href="blog-details.html">Top 10 IT Solutions Every
-                                            Business
-                                            Needs in 2025</a></h3><a href="blog-details.html"
-                                        class="th-btn style4 th-icon">Read More <i
-                                            class="fa-light fa-arrow-right-long"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="blog-box th-ani">
-                                <div class="blog-img global-img"><img src="assets/img/blog/blog_1_2.jpg"
-                                        alt="blog image"></div>
-                                <div class="blog-box_content">
-                                    <div class="blog-meta"><a class="author" href="blog.html">Janu 10 2025</a> <a
-                                            href="blog.html">10 min read</a></div>
-                                    <h3 class="box-title"><a href="blog-details.html">Exploring the Benefits of
-                                            End-to-End IT Solution Services</a></h3><a href="blog-details.html"
-                                        class="th-btn style4 th-icon">Read More <i
-                                            class="fa-light fa-arrow-right-long"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="blog-box th-ani">
-                                <div class="blog-img global-img"><img src="assets/img/blog/blog_1_3.jpg"
-                                        alt="blog image"></div>
-                                <div class="blog-box_content">
-                                    <div class="blog-meta"><a class="author" href="blog.html">Nov 12 2025</a> <a
-                                            href="blog.html">11 min read</a></div>
-                                    <h3 class="box-title"><a href="blog-details.html">The Impact of AI and Machine
-                                            Learning on IT Solutions</a></h3><a href="blog-details.html"
                                         class="th-btn style4 th-icon">Read More <i
                                             class="fa-light fa-arrow-right-long"></i></a>
                                 </div>
@@ -1088,9 +1012,9 @@
                                 <div class="th-social"><a href="https://www.facebook.com/"><i
                                             class="fab fa-facebook-f"></i></a> <a href="https://www.twitter.com/"><i
                                             class="fab fa-twitter"></i></a> <a href="https://www.linkedin.com/"><i
-                                            class="fab fa-linkedin-in"></i></a> <a
-                                        href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a> <a
-                                        href="https://instagram.com/"><i class="fab fa-instagram"></i></a></div>
+                                            class="fab fa-linkedin-in"></i></a> <a href="https://www.whatsapp.com/"><i
+                                            class="fab fa-whatsapp"></i></a> <a href="https://instagram.com/"><i
+                                            class="fab fa-instagram"></i></a></div>
                             </div>
                         </div>
                     </div>
@@ -1130,8 +1054,8 @@
                                     </div>
                                 </div>
                                 <div class="info-box_text">
-                                    <div class="icon"><img src="assets/img/icon/location-dot.svg"
-                                            alt="img"></div>
+                                    <div class="icon"><img src="assets/img/icon/location-dot.svg" alt="img">
+                                    </div>
                                     <div class="details">
                                         <p><a href="https://maps.app.goo.gl/QyH2fFoJ9fii93mt7" target="_blank">
                                                 Hatfield, Hertfordshire, United Kingdom, AL10 9NA</a></p>
