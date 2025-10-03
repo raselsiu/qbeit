@@ -19,7 +19,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
@@ -41,7 +41,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a href="{{ route('topHeader') }}" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
@@ -118,6 +118,16 @@
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Posts
+                                </p>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="{{ route('workWithUs') }}" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Work With Us
                                 </p>
                             </a>
                         </li>

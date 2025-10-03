@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\TopHeaderController;
 use App\Http\Controllers\Backend\WhoWeAreController;
 use App\Http\Controllers\Backend\WhyChooseUsController;
+use App\Http\Controllers\Backend\WorkWithUsController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SliderController;
@@ -42,8 +43,8 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    // 
-    // 
+    //
+    //
     // Header and Footer Info
     Route::get('/top-header', [TopHeaderController::class, 'index'])->name('topHeader');
     Route::post('/top-header/store', [TopHeaderController::class, 'store'])->name('topHeaderStore');
@@ -60,7 +61,7 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/slider-delete/{id}', [SliderController::class, 'destroy'])->name('sliderDestroy');
     //
     //
-    // Banner 
+    // Banner
     Route::get('/banner', [BannerController::class, 'index'])->name('banner');
     Route::post('/banner/store', [BannerController::class, 'store'])->name('bannerStore');
     Route::get('/banner-edit/{id}', [BannerController::class, 'edit'])->name('bannerEdit');
@@ -68,7 +69,7 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/banner-delete/{id}', [BannerController::class, 'destroy'])->name('bannerDestroy');
 
 
-    // Who We Are 
+    // Who We Are
     Route::get('/who-we-are', [WhoWeAreController::class, 'index'])->name('whoWeAre');
     Route::get('/who-we-are/create', [WhoWeAreController::class, 'create'])->name('whoWeAreCreate');
     Route::post('/who-we-are/store', [WhoWeAreController::class, 'store'])->name('whoWeAreStore');
@@ -78,7 +79,7 @@ Route::prefix('dashboard')->group(function () {
 
 
 
-    // What We Offer 
+    // What We Offer
     Route::get('/offer', [OfferController::class, 'index'])->name('offer');
     Route::get('/what-we-offer/create', [OfferController::class, 'create'])->name('whatWeOfferCreate');
     Route::post('/what-we-offer/store', [OfferController::class, 'store'])->name('whatWeOfferStore');
@@ -86,7 +87,7 @@ Route::prefix('dashboard')->group(function () {
     Route::post('/what-we-offer-update/{id}', [OfferController::class, 'update'])->name('whatWeOfferUpdate');
     Route::get('/what-we-offer-delete/{id}', [OfferController::class, 'destroy'])->name('whatWeOfferDestroy');
 
-    // Team 
+    // Team
     Route::get('/team', [TeamController::class, 'index'])->name('team');
     Route::get('/team/create', [TeamController::class, 'create'])->name('teamCreate');
     Route::post('/team/store', [TeamController::class, 'store'])->name('teamStore');
@@ -94,7 +95,7 @@ Route::prefix('dashboard')->group(function () {
     Route::post('/team-update/{id}', [TeamController::class, 'update'])->name('teamUpdate');
     Route::get('/team-delete/{id}', [TeamController::class, 'destroy'])->name('teamDestroy');
 
-    // Testimonial 
+    // Testimonial
     Route::get('/testimonial', [TestimonialController::class, 'index'])->name('testimonial');
     Route::get('/testimonial/create', [TestimonialController::class, 'create'])->name('testimonialCreate');
     Route::post('/testimonial/store', [TestimonialController::class, 'store'])->name('testimonialStore');
@@ -102,7 +103,7 @@ Route::prefix('dashboard')->group(function () {
     Route::post('/testimonial-update/{id}', [TestimonialController::class, 'update'])->name('testimonialUpdate');
     Route::get('/testimonial-delete/{id}', [TestimonialController::class, 'destroy'])->name('testimonialDestroy');
 
-    // Why Choose Us 
+    // Why Choose Us
     Route::get('/why-choose-us', [WhyChooseUsController::class, 'index'])->name('whyChooseUs');
     Route::get('/why-choose-us/create', [WhyChooseUsController::class, 'create'])->name('whyChooseUsCreate');
     Route::post('/why-choose-us/store', [WhyChooseUsController::class, 'store'])->name('whyChooseUsStore');
@@ -117,6 +118,15 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/posts-edit/{id}', [PostsController::class, 'edit'])->name('postsEdit');
     Route::post('/posts-update/{id}', [PostsController::class, 'update'])->name('postsUpdate');
     Route::get('/posts-delete/{id}', [PostsController::class, 'destroy'])->name('postsDestroy');
+
+
+    // Work With Us
+    Route::get('/work-with-us', [WorkWithUsController::class, 'index'])->name('workWithUs');
+    Route::get('/work-with-us/create', [WorkWithUsController::class, 'create'])->name('workWithUsCreate');
+    Route::post('/work-with-us/store', [WorkWithUsController::class, 'store'])->name('workWithUsStore');
+    Route::get('/work-with-us-edit/{id}', [WorkWithUsController::class, 'edit'])->name('workWithUsEdit');
+    Route::post('/work-with-us-update/{id}', [WorkWithUsController::class, 'update'])->name('workWithUsUpdate');
+    Route::get('/work-with-us-delete/{id}', [WorkWithUsController::class, 'destroy'])->name('workWithUsDestroy');
 });
 
 // ======================================================================
