@@ -45,7 +45,7 @@
                                         <th>Email</th>
                                         <th>Phone</th>
                                         <th>Address</th>
-                                        <th style="width: 40px">Action</th>
+                                        <th style="width: 120px">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -55,9 +55,9 @@
                                             <img src="/upload/header_footer/{{ $fh->logo }}" alt="image"
                                                 width="50">
                                         </td>
-                                        <td><span class="badge bg-success">{{ $fh->email }}</span></td>
-                                        <td><span class="badge bg-success">{{ $fh->phone }}</span></td>
-                                        <td><span class="badge bg-success">{{ Str::limit($fh->address, 10) }}</span></td>
+                                        <td><span>{{ $fh->email }}</span></td>
+                                        <td><span>{{ $fh->phone }}</span></td>
+                                        <td><span>{{ Str::limit($fh->address, 20) }}</span></td>
                                         <td>
                                             <a href="{{ route('topHeaderEdit', $fh->id) }}" title="Edit"
                                                 class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>

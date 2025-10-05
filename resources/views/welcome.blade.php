@@ -96,10 +96,8 @@
                             <ul>
                                 <li class="d-none d-xl-inline-block"><i
                                         class="fa-sharp fa-regular fa-location-dot"></i>
-                                    <span>Hatfield, Hertfordshire, United Kingdom, AL10 9NA</span>
+                                    <span>{{ $top_header->address }}</span>
                                 </li>
-                                <li class="d-none d-xl-inline-block"><i class="fa-regular fa-clock"></i> <span>Sun to
-                                        Friday: 8.00 am - 7.00 pm</span></li>
                             </ul>
                         </div>
                     </div>
@@ -144,7 +142,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="logo-bg" data-mask-src="{{ asset('frontend/assets/img/logo_bg_mask.png') }}"></div>
             </div>
         </div>
     </header>
@@ -972,8 +969,9 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="blog-box th-ani">
-                                <div class="blog-img global-img"><img src="{{ asset('frontend/assets/img/blog/blog_1_1.jpg') }}"
-                                        alt="blog image"></div>
+                                <div class="blog-img global-img"><img
+                                        src="{{ asset('frontend/assets/img/blog/blog_1_1.jpg') }}" alt="blog image">
+                                </div>
                                 <div class="blog-box_content">
                                     <div class="blog-meta"><a class="author" href="blog.html">July 05, 2025</a> <a
                                             href="blog.html">6 min read</a></div>

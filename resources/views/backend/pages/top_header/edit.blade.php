@@ -56,7 +56,7 @@
                                     <div class="form-group">
                                         <label for="logo">Site Logo</label>
                                         <input type="file" name="logo" class="form-control" id="logo"
-                                            placeholder="Enter Your Address" required>
+                                            placeholder="Enter Your Address">
                                     </div>
                                 </div>
                                 <div class="col-md-12">

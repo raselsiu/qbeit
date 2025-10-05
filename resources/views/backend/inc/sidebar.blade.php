@@ -46,7 +46,7 @@
                             <a href="{{ route('topHeader') }}" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
-                                    Top Header
+                                    Header & Footer Info
                                 </p>
                             </a>
                         </li>
