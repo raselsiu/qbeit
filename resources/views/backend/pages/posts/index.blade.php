@@ -2,9 +2,6 @@
 
 @section('content')
     <br><br>
-
-
-
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -31,7 +28,7 @@
                     <div class="card-header">
                         <h3 class="card-title">Section - Posts</h3>
                         <span style="display: flex;justify-content: end" class="create_btn success"><a
-                                href="{{ route('postsCreate') }}" class="btn btn-sm btn-success">Create</a></span>
+                                href="{{ route('postsCreate') }}" class="btn btn-sm btn-success">Create New Post</a></span>
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered">
@@ -54,7 +51,7 @@
                                             </td>
                                             <td><span>{{ Str::limit($post->title, 50) }}</span>
                                             </td>
-                                            <td><span>{!! Str::limit($post->desc, 50) !!}</span>
+                                            <td><span>{{ Str::limit($post->desc, 50) }}</span>
                                             </td>
                                             <td>
                                                 <a href="{{ route('postsEdit', $post->id) }}" title="Edit"

@@ -70,11 +70,9 @@ class WhoWeAreController extends Controller
                 $file->move(public_path('upload/who_we_are'), $fileName);
                 $who->feature_image_two = $fileName;
             }
-
-
             $who->save();
 
-            return redirect()->back()->with('msg', 'Created Successfully!');
+            return redirect()->route('whoWeAre')->with('msg', 'Created Successfully!');
         }
     }
 

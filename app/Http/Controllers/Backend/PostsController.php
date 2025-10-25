@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class PostsController extends Controller
 {
@@ -18,7 +20,8 @@ class PostsController extends Controller
 
     public function create()
     {
-        return view('backend.pages.posts.create');
+        $categories = Category::all();
+        return view('backend.pages.posts.create', compact('categories'));
     }
 
 
@@ -26,12 +29,21 @@ class PostsController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'category' => 'required',
             'desc' => 'required',
             'image' => 'required|mimes:jpg,jpeg,png,gif',
         ]);
 
+
+        if (Post::where('slug', Str::slug($request->title))->exists()) {
+            return back()->with('error','Exists! Change your post title.');
+        }
+
+
         $posts = new Post();
         $posts->title = $request->title;
+        $posts->category = $request->category;
+        $posts->slug = Str::slug($request->title);
         $posts->desc = $request->desc;
 
         $folderPath = public_path('upload/posts');
@@ -56,6 +68,7 @@ class PostsController extends Controller
 
     public function edit(string $id)
     {
+        $post['categories'] = Category::all();
         $post['post'] = Post::find($id);
         return view('backend.pages.posts.edit', $post);
     }
@@ -65,6 +78,8 @@ class PostsController extends Controller
     {
         $posts = Post::find($id);
         $posts->title = $request->title;
+        $posts->category = $request->category;
+        $posts->slug = Str::slug($request->title);
         $posts->desc = $request->desc;
 
         $folderPath = public_path('upload/posts');

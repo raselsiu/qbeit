@@ -19,29 +19,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
-                        {{-- <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Starter Pages
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Active Page</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Inactive Page</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li> --}}
+
                         <li class="nav-item">
                             <a href="{{ route('topHeader') }}" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
@@ -113,14 +91,32 @@
                             </a>
                         </li>
 
+
+
                         <li class="nav-item">
-                            <a href="{{ route('posts') }}" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Posts
+                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('serviceCategory') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Category</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('posts') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Posts</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
+
 
 
                         <li class="nav-item">
@@ -128,6 +124,14 @@
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Work With Us
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('allContactMessages') }}" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Contact Messages
                                 </p>
                             </a>
                         </li>

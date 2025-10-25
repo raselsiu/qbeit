@@ -50,14 +50,25 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="title">Post Title</label>
+                                        <label for="title">Title</label>
                                         <input type="text" name="title" class="form-control" id="title"
                                             placeholder="Enter Your Title" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="description"> Post Description</label>
+                                        <label for="category">Post Category</label>
+                                        <select name="category" id="category" class="form-control" required>
+                                            <option value="" disabled selected>Select Category</option>
+                                            @foreach ($categories as $category)
+                                                <option value="{{ $category->name }}">{{ $category->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="description">Description</label>
                                         <textarea name="desc" id="desc" cols="10" rows="20" class="form-control"
                                             placeholder="Enter Your Description" required></textarea>
                                     </div>
@@ -75,7 +86,7 @@
 
 
                             <div class="card-footer text-right">
-                                <button type="submit" class="btn btn-primary">Create Posts Section</button>
+                                <button type="submit" class="btn btn-primary">Publish Now</button>
                             </div>
                         </form>
                     </div>

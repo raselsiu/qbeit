@@ -36,7 +36,8 @@
                     <div class="card-header">
                         <h3 class="card-title">Section - Team</h3>
                         <span style="display: flex;justify-content: end" class="create_btn success"><a
-                                href="{{ route('teamCreate') }}" class="btn btn-sm btn-success">Create</a></span>
+                                href="{{ route('teamCreate') }}" class="btn btn-sm btn-success">Create Team
+                                Member</a></span>
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered">

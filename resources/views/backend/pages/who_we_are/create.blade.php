@@ -155,8 +155,4 @@
             })
         })
     </script>
-
-    <script>
-        CKEDITOR.replace('description');
-    </script>
 @endpush

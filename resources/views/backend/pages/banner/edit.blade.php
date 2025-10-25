@@ -54,7 +54,7 @@
                                     <div class="form-group">
                                         <label for="Icon Class">Image</label>
                                         <input type="file" name="image" class="form-control" id="image"
-                                            placeholder="Upload Icon" required>
+                                            placeholder="Upload Icon">
                                     </div>
                                 </div>
                             </div>

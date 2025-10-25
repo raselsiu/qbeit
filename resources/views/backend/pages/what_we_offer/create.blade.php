@@ -31,7 +31,7 @@
 
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Create - What We Offer - Section</h3>
+                        <h3 class="card-title">Section - What We Offer</h3>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('whatWeOfferStore') }}" method="POST" enctype="multipart/form-data">
@@ -103,4 +103,8 @@
             })
         })
     </script>
+
+    {{-- <script>
+        CKEDITOR.replace('description');
+    </script> --}}
 @endpush

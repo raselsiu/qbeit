@@ -31,7 +31,7 @@
 
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Create - Posts</h3>
+                        <h3 class="card-title">Update - Posts</h3>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('postsUpdate', $post->id) }}" method="POST" enctype="multipart/form-data">
@@ -42,6 +42,19 @@
                                         <label for="title">Post Title</label>
                                         <input type="text" name="title" class="form-control" id="title"
                                             placeholder="Enter Your Title" value="{{ $post->title }}" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="category">Post Category</label>
+                                        <select name="category" id="category" class="form-control" required>
+                                            <option value="" disabled selected>Select Category</option>
+                                            @foreach ($categories as $category)
+                                                <option value="{{ $category->name }}"
+                                                    {{ $category->name == $post->category ? 'selected' : '' }}>
+                                                    {{ $category->name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -63,7 +76,7 @@
 
 
                             <div class="card-footer text-right">
-                                <button type="submit" class="btn btn-primary">Create Posts Section</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
                             </div>
                         </form>
                     </div>

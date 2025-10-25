@@ -3,6 +3,8 @@
 @section('content')
     <br><br>
 
+
+
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -28,31 +30,28 @@
                 @if (@$sliders->count() > 0)
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Footer & Header Info</h3>
+                            <h3 class="card-title">Section - Slider</h3>
                         </div>
                         <div class="card-body">
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th style="width: 10px">#</th>
-                                        <th>Logo</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Address</th>
-                                        <th style="width: 40px">Action</th>
+                                        <th>Slider Image</th>
+                                        <th>Title</th>
+                                        <th>Subtitle</th>
+                                        <th style="width: 120px">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($sliders as $slide)
                                         <tr>
-                                            <td>1.</td>
+                                            <td>{{ $loop->iteration }}</td>
                                             <td>
                                                 <img src="/upload/slider/{{ $slide->image }}" alt="image" width="50">
                                             </td>
-                                            <td><span class="badge bg-success">{{ Str::limit($slide->title, 10) }}</span>
-                                            </td>
-                                            <td><span class="badge bg-success">{{ Str::limit($slide->subtitle, 10) }}</span>
-                                            </td>
+                                            <td>{{ Str::limit($slide->title, 20) }}</td>
+                                            <td>{{ Str::limit($slide->subtitle, 20) }}</td>
                                             <td>
                                                 <a href="{{ route('sliderEdit', $slide->id) }}" title="Edit"
                                                     class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>

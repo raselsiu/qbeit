@@ -34,7 +34,7 @@
                 @if (@$banners->count() > 0)
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Footer & Header Info</h3>
+                            <h3 class="card-title">Section Feature Banner</h3>
                         </div>
                         <div class="card-body">
                             <table class="table table-bordered">
@@ -42,10 +42,9 @@
                                     <tr>
                                         <th style="width: 10px">#</th>
                                         <th>Image</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Address</th>
-                                        <th style="width: 40px">Action</th>
+                                        <th>Title</th>
+                                        <th>Subtitle</th>
+                                        <th style="width: 120px">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -56,10 +55,9 @@
                                                 <img src="/upload/banner/{{ $banner->image }}" alt="image"
                                                     width="50">
                                             </td>
-                                            <td><span class="badge bg-success">{{ Str::limit($banner->title, 10) }}</span>
+                                            <td>{{ Str::limit($banner->title, 30) }}
                                             </td>
-                                            <td><span
-                                                    class="badge bg-success">{{ Str::limit($banner->subtitle, 10) }}</span>
+                                            <td>{{ Str::limit($banner->subtitle, 30) }}
                                             </td>
                                             <td>
                                                 <a href="{{ route('bannerEdit', $banner->id) }}" title="Edit"

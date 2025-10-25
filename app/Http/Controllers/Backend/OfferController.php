@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Offer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class OfferController extends Controller
 {
@@ -21,39 +22,43 @@ class OfferController extends Controller
         return view('backend.pages.what_we_offer.create');
     }
 
-
     public function store(Request $request)
     {
 
-
-        $count = Offer::count();
-        if ($count >= 1) {
-            return redirect()->back()->with('error', '1 items already Exists! Please try to update or delete one!');
-        } else {
-            $who = new Offer();
-            $who->title = $request->title;
-            $who->description = $request->description;
-
-            $folderPath = public_path('upload/what_we_offer');
+        $this->validate($request,[
+            'description' => 'required',
+        ]);
 
 
-            if (!File::exists($folderPath)) {
-                File::makeDirectory($folderPath, 0755, true, true);
-            }
-
-            if ($request->file('image')) {
-                $file = $request->file('image');
-                @unlink(public_path('upload/what_we_offer/' . $who->image));
-                $fileName = date('YmdHi') . $file->getClientOriginalName();
-                $file->move(public_path('upload/what_we_offer'), $fileName);
-                $who->image = $fileName;
-            }
-
-
-            $who->save();
-
-            return redirect()->back()->with('msg', 'Created Successfully!');
+        if (Offer::where('slug', Str::slug($request->title))->exists()) {
+            return back()->with('error','Exists! Change your service title.');
         }
+
+        $who = new Offer();
+        $who->title = $request->title;
+        $who->slug =  Str::slug($request->title);
+        $who->description = $request->description;
+
+        $folderPath = public_path('upload/what_we_offer');
+
+
+        if (!File::exists($folderPath)) {
+            File::makeDirectory($folderPath, 0755, true, true);
+        }
+
+        if ($request->file('image')) {
+            $file = $request->file('image');
+            @unlink(public_path('upload/what_we_offer/' . $who->image));
+            $fileName = date('YmdHi') . $file->getClientOriginalName();
+            $file->move(public_path('upload/what_we_offer'), $fileName);
+            $who->image = $fileName;
+        }
+
+
+        $who->save();
+
+        return redirect()->route('offer')->with('msg', 'Created Successfully!');
+
     }
 
 
@@ -77,6 +82,7 @@ class OfferController extends Controller
     {
         $who = Offer::find($id);
         $who->title = $request->title;
+        $who->slug = Str::slug($request->title);
         $who->description = $request->description;
 
         $folderPath = public_path('upload/what_we_offer');

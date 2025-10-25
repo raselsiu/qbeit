@@ -8,7 +8,24 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                @if (session()->has('msg'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('msg') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
 
+
+                @if (session()->has('error'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ session('error') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
 
                 <div class="card">
                     <div class="card-header">
@@ -22,10 +39,9 @@
                                 <tr>
                                     <th style="width: 10px">#</th>
                                     <th>Image</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Address</th>
-                                    <th style="width: 40px">Action</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th style="width: 120px">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,11 +53,8 @@
                                                 <img src="/upload/what_we_offer/{{ $who->image }}" alt="image"
                                                     width="50">
                                             </td>
-                                            <td><span class="badge bg-success">{{ Str::limit($who->title, 10) }}</span>
-                                            </td>
-                                            <td><span
-                                                    class="badge bg-success">{{ Str::limit($who->description, 10) }}</span>
-                                            </td>
+                                            <td>{{ Str::limit($who->title, 30) }}</td>
+                                            <td>{!! Str::limit($who->description, 30) !!}</td>
                                             <td>
                                                 <a href="{{ route('whatWeOfferEdit', $who->id) }}" title="Edit"
                                                     class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>

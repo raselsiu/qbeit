@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\ContactController as BackendContactController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\OfferController;
 use App\Http\Controllers\Backend\PostsController;
@@ -13,6 +16,7 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\FrontPageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SliderController;
+use App\Models\Contact;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -35,12 +39,10 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
 
-
-
 // -------------------------BACKEND--------------------------------------
 // ======================================================================
 
-Route::prefix('dashboard')->group(function () {
+Route::prefix('dashboard')->middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     //
     //
@@ -126,10 +128,32 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/work-with-us-edit/{id}', [WorkWithUsController::class, 'edit'])->name('workWithUsEdit');
     Route::post('/work-with-us-update/{id}', [WorkWithUsController::class, 'update'])->name('workWithUsUpdate');
     Route::get('/work-with-us-delete/{id}', [WorkWithUsController::class, 'destroy'])->name('workWithUsDestroy');
+
+
+    // Service Category
+    Route::get('/service-category', [CategoryController::class, 'index'])->name('serviceCategory');
+    Route::get('/service-category/create', [CategoryController::class, 'create'])->name('serviceCategoryCreate');
+    Route::post('/service-category/store', [CategoryController::class, 'store'])->name('serviceCategoryStore');
+    Route::get('/service-category-edit/{id}', [CategoryController::class, 'edit'])->name('serviceCategoryEdit');
+    Route::post('/service-category-update/{id}', [CategoryController::class, 'update'])->name('serviceCategoryUpdate');
+    Route::get('/service-category-delete/{id}', [CategoryController::class, 'destroy'])->name('serviceCategoryDestroy');
+
+    // Contact Messages
+       Route::get('/contact-messages', [BackendContactController::class, 'index'])->name('allContactMessages');
+       Route::get('/contact-messages/{id}', [BackendContactController::class, 'edit'])->name('editContactMessage');
+       Route::get('delete/contact-messages/{id}', [BackendContactController::class, 'destroy'])->name('deleteContactMessage');
 });
 
 // ======================================================================
 // ------------------------BACKEND END-----------------------------------
 
 // Frontend Route
-Route::get('/', [FrontPageController::class, 'getTopHeader'])->name('getTopHeader');
+Route::get('/', [FrontPageController::class, 'welcomePage'])->name('welcomePage');
+Route::get('/service/{slug}', [FrontPageController::class, 'singleService'])->name('singleService');
+Route::get('/post/{slug}', [FrontPageController::class, 'singlePost'])->name('singlePost');
+Route::get('/contact-us', [FrontPageController::class, 'contactus'])->name('contactus');
+Route::post('/contact-store', [ContactController::class, 'store'])->name('storeContact');
+Route::get('/posts', [FrontPageController::class, 'posts'])->name('posts');
+Route::get('/posts/category/{categoryName}', [FrontPageController::class, 'findPostByCategory'])->name('findPostByCategory');
+
+// Frontend Route End

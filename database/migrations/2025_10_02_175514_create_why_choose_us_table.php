@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('why_choose_us', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('desc');
+            $table->longText('desc');
+            $table->string('category');
             $table->string('feature_1_title');
             $table->text('feature_1_desc');
             $table->string('feature_1_img');

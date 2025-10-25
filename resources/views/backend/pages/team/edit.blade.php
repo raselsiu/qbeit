@@ -31,7 +31,7 @@
 
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Create Team Section</h3>
+                        <h3 class="card-title">Update Team Section</h3>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('teamUpdate', $team->id) }}" method="POST" enctype="multipart/form-data">
@@ -89,7 +89,7 @@
 
 
                 <div class="card-footer text-right">
-                    <button type="submit" class="btn btn-primary">Create Team</button>
+                    <button type="submit" class="btn btn-primary">Update Team</button>
                 </div>
                 </form>
             </div>

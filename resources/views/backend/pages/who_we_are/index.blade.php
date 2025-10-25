@@ -46,9 +46,9 @@
                                 @foreach ($whoweare as $qbeit)
                                     <tr>
                                         <td>1.</td>
-                                        <td><span class="badge bg-success">{{ Str::limit($qbeit->title, 20) }}</span>
+                                        <td>{{ Str::limit($qbeit->title, 40) }}
                                         </td>
-                                        <td><span class="badge bg-success">{{ Str::limit($qbeit->description, 20) }}</span>
+                                        <td>{{ Str::limit($qbeit->description, 40) }}
                                         </td>
                                         <td>
                                             <img src="/upload/who_we_are/{{ $qbeit->feature_image_right }}" alt="image"

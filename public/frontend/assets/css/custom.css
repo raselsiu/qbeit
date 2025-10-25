@@ -1,0 +1,20 @@
+.testiSlider6 .swiper-slide.swiper-slide-active .testi-card-quote {
+    background-color: transparent !important;
+}
+
+.testiSlider6 .swiper-slide.swiper-slide-active .testi-card-quote img {
+    -webkit-filter: brightness(1) invert(0) !important;
+    filter: brightness(1) invert(0) !important;
+}
+
+.recent-post .media-img {
+    height: auto !important;
+    border-radius: 6px !important;
+}
+
+.sidebar-gallery .gallery-thumb:hover:before {
+    opacity: 0.2 !important;
+    padding-top: 135%;
+    width: 135%;
+    border-radius: 35%;
+}

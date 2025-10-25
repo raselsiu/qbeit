@@ -44,7 +44,7 @@ class TestimonialController extends Controller
         }
 
         $testi->save();
-        return redirect()->back()->with('msg', 'Created Successfully!');
+        return redirect()->route('testimonial')->with('msg', 'Created Successfully!');
     }
 
 

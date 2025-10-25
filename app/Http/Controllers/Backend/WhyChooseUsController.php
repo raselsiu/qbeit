@@ -32,13 +32,13 @@ class WhyChooseUsController extends Controller
             'desc' => 'required',
             'feature_1_title' => 'required',
             'feature_1_desc' => 'required',
-            'feature_1_img' => 'required|mimes:jpg,jpeg,png,webp',
+            'feature_1_img' => 'required|mimes:jpg,svg,jpeg,png,webp',
             'feature_2_title' => 'required',
             'feature_2_desc' => 'required',
-            'feature_2_img' => 'required|mimes:jpg,jpeg,png,webp',
+            'feature_2_img' => 'required|mimes:jpg,svg,jpeg,png,webp',
             'feature_3_title' => 'required',
             'feature_3_desc' => 'required',
-            'feature_3_img' => 'required|mimes:jpg,jpeg,png,webp',
+            'feature_3_img' => 'required|mimes:jpg,svg,jpeg,png,webp',
 
             // Section Image
             'section_img_1' => 'required|mimes:jpg,jpeg,png,webp',

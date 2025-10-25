@@ -38,18 +38,18 @@
                             enctype="multipart/form-data">
                             @csrf
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="title">Title</label>
                                         <input type="text" name="title" class="form-control" id="title"
                                             placeholder="Enter Your Title" required value="{{ $what->title }}">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="description">Description</label>
-                                        <input type="text" class="form-control" name="description" id="description"
-                                            placeholder="Enter Your Description" required value="{{ $what->description }}">
+                                        <textarea name="description" id="description" cols="30" rows="10" class="form-control"
+                                            placeholder="Enter Your Description" required>{{ $what->description }}</textarea>
                                     </div>
                                 </div>
 
@@ -103,5 +103,8 @@
                 });
             })
         })
+    </script>
+    <script>
+        CKEDITOR.replace('description');
     </script>
 @endpush
